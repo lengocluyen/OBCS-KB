@@ -113,6 +113,33 @@
                                                rdfs:range <http://utc.fr/crio/ns#TemporalInformation> .
 
 
+###  http://utc.fr/ucpo/ns#hasTopography
+<http://utc.fr/ucpo/ns#hasTopography> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://utc.fr/crio/ns#GeographicInformation> ;
+                                      rdfs:range <http://utc.fr/ucpo/ns#Topography> .
+
+
+###  https://www.w3.org/TR/owl-time/#time:hasBeginning
+<https://www.w3.org/TR/owl-time/#time:hasBeginning> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                                    rdfs:range <https://www.w3.org/TR/owl-time/#Instant> ;
+                                                    rdfs:comment "Beginning of a temporal entity." .
+
+
+###  https://www.w3.org/TR/owl-time/#time:hasEnd
+<https://www.w3.org/TR/owl-time/#time:hasEnd> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                              rdfs:range <https://www.w3.org/TR/owl-time/#Instant> ;
+                                              rdfs:comment "End of a temporal entity." .
+
+
+###  https://www.w3.org/TR/owl-time/#time:hasTemporalDuration
+<https://www.w3.org/TR/owl-time/#time:hasTemporalDuration> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                                           rdfs:range <https://www.w3.org/TR/owl-time/#TemporalDuration> ;
+                                                           rdfs:comment "Duration of a temporal entity" .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -864,6 +891,7 @@
 
 ###  http://utc.fr/crio/ns#TemporalInformation
 <http://utc.fr/crio/ns#TemporalInformation> rdf:type owl:Class ;
+                                            owl:equivalentClass <http://www.w3.org/2006/time#TemporalEntity> ;
                                             rdfs:comment "Temporal information of a crisis refers to the time-related aspects associated with the occurrence, duration, and progression of the crisis event. It involves capturing and understanding the temporal attributes such as the start date, end date, and duration of the crisis." .
 
 
@@ -966,6 +994,27 @@
 <http://utc.fr/crio/ns#Winterstorm/Blizzard> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://utc.fr/crio/ns#Convectivestorm> ;
                                              rdfs:comment "A winter storm is a weather event that occurs during the winter season and is characterized by a combination of cold temperatures, precipitation, and strong winds. Winter storms can bring various types of hazardous weather conditions, including snowfall, sleet, freezing rain, and blizzards." .
+
+
+###  http://utc.fr/ucpo/ns#Topography
+<http://utc.fr/ucpo/ns#Topography> rdf:type owl:Class ;
+                                   rdfs:comment "Topography refers to the physical features and characteristics of a land surface or area, including its elevation, terrain, and the arrangement of natural and artificial features such as hills, valleys, rivers, lakes, and buildings. It is a detailed description or representation of the surface features of a region, often depicted on topographic maps." .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
+                                             rdfs:comment "https://www.w3.org/TR/owl-time/" .
+
+
+###  https://www.w3.org/TR/owl-time/#Instant
+<https://www.w3.org/TR/owl-time/#Instant> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                          rdfs:comment "A temporal entity with zero extent or duration" .
+
+
+###  https://www.w3.org/TR/owl-time/#TemporalDuration
+<https://www.w3.org/TR/owl-time/#TemporalDuration> rdf:type owl:Class ;
+                                                   rdfs:comment "The duration of an interval (or temporal sequence) can have many different descriptions. An interval can be 1 day 2 hours, or 26 hours, or 1560 minutes, and so on. It is useful to be able to talk about these descriptions in a convenient way as independent objects, and to talk about their equivalences." .
 
 
 #################################################################
